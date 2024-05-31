@@ -13,7 +13,8 @@ const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
     // origin: 'http://localhost:3000', // यहाँ अपना फ्रंटेंड ओरिजिन सेट करें
-    origin: 'https://chatapplicationbyakshu.netlify.app/',
+    // origin: 'https://chatapplicationbyakshu.netlify.app/',
+    origin: '*',
     methods: ['GET', 'POST']
   }
 });
