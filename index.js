@@ -1,5 +1,5 @@
 // const express = require('express');
-const express=require('express');
+const express = require('express');
 const http = require('http');
 const { Server } = require('socket.io');
 const cors = require('cors');
@@ -8,15 +8,22 @@ const cors = require('cors');
 const app = express();
 
 // CORS मिडलवेयर सेटअप
-app.use(cors());
+
 
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
     origin: 'http://localhost:3000' || "https://chatapplicationbyakshu.netlify.app/" || "*", // यहाँ अपना फ्रंटेंड ओरिजिन सेट करें
-    methods: ['GET', 'POST']
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
+    credentials: true,
   }
 });
+
+app.use(cors(cors));
+
 
 io.on('connection', (socket) => {
   console.log('New client connected');
