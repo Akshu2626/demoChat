@@ -1,4 +1,5 @@
-const express = require('express');
+// const express = require('express');
+const express=require('express');
 const http = require('http');
 const { Server } = require('socket.io');
 const cors = require('cors');
@@ -12,9 +13,7 @@ app.use(cors());
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    // origin: 'http://localhost:3000', // यहाँ अपना फ्रंटेंड ओरिजिन सेट करें
-    // origin: 'https://chatapplicationbyakshu.netlify.app/',
-    origin: '*',
+    origin: 'http://localhost:3000' || "https://chatapplicationbyakshu.netlify.app/" || "*", // यहाँ अपना फ्रंटेंड ओरिजिन सेट करें
     methods: ['GET', 'POST']
   }
 });
