@@ -12,7 +12,7 @@ app.use(cors('https://chatapplication-orcin.vercel.app/'));
 // CORS मिडलवेयर सेटअप
 
 
-const allowedOrigins = ['http://localhost:3000', 'https://chatapplication-orcin.vercel.app/'];
+const allowedOrigins = ['http://localhost:4000', 'https://chatapplication-orcin.vercel.app/'];
 
 
 
