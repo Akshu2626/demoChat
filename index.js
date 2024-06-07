@@ -12,10 +12,12 @@ app.use(cors('https://chatapplication-orcin.vercel.app/'));
 // CORS मिडलवेयर सेटअप
 
 
+
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: 'http://localhost:3000',
+    // origin: 'http://localhost:3000',
+    origin: 'https://chatapplication-orcin.vercel.app/',
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     preflightContinue: false,
